@@ -37,7 +37,7 @@ printName('Cameron')
 function greeting(name){
   console.log(`Hello, ${name}`);
 }
-greeting('Jake')
+greeting('Jake');
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -52,7 +52,7 @@ function add(x,y){
   return parseInt(x)+parseInt(y)
 }
 let sum = add(19,23);
-console.log(sum)
+console.log(sum);
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
@@ -182,6 +182,7 @@ function theEliminator(contestants,loser){
       return contestants
     }
   }
+  return contestants
 }
 
 let newArray = theEliminator(contestants,loser);
@@ -214,21 +215,16 @@ toUpper(sampleString)
 
 function emailCheck(email){
   email = String(email);
-  email.trim();
-  let at = false;
+  email = email.trim();
   for(let i = 0; i < email.length; i++){
     if(email[i]==='@'){
-      at = true
+      return 'email verified';
     }
   }
-  if(at === true){
-    return 'email verified'
-  } else {
-    return 'must provide a valid email address'
-  }
+  return 'must provide a valid email address';
 }
 
-let valid = emailCheck("sraywall@gmail.com")
+let valid = emailCheck("sraywall@gmail.com       ")
 console.log(valid)
 
 ////////////////// PROBLEM 13 ////////////////////
@@ -256,11 +252,12 @@ console.log(`totalFrogs: ${totalFrogs}`)
 */
 
 //CODE HERE
-function buyChocolateFrogs(gold){
+function buyChocolateFrogs2(gold){
   return parseInt(gold / 3)
+  // return Math.floor(gold/3)
 }
 
-let totalFrogs2 = buyChocolateFrogs(19)
+let totalFrogs2 = buyChocolateFrogs2(19)
 console.log(`totalFrogs2: ${totalFrogs2}`)
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -306,7 +303,7 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = ["cute"]
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
 let bathroomScope = ["rubberDuck"]
